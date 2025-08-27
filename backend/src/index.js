@@ -6,7 +6,9 @@ dotenv.config({
 })
 
 console.log(`${process.env.DB_NAME}`);
-
+app.get("/",(req,res)=>{
+    res.send("Welcome to the e-Learning Platform");
+})
 
 db()
 .then(() => {
