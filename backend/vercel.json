@@ -1,9 +1,7 @@
 {
   "functions": {
     "src/index.js": {
-      "runtime": "vercel-node@16",
-      "memory": 1024,
-      "maxDuration": 10
+      "runtime": "node@18.x"
     }
   },
   "rewrites": [
