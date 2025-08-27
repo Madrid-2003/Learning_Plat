@@ -33,7 +33,7 @@ const Forgetpassword = () => {
     }
 
     try {
-      const response = await axios.post(`/api/${userType}/forgetpassword`, { Email: data.email});
+      const response = await axios.post(`https://learning-plat-36hz.vercel.app/${userType}/forgetpassword`, { Email: data.email});
       console.log(response.data);
       toast.success('Email sent successfully');
     } catch (error) {

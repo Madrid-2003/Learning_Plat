@@ -42,7 +42,7 @@ export default function AdminLogin() {
 
     try {
       // Send data to backend
-      const response = await fetch(`/api/admin/login`, {
+      const response = await fetch(`https://learning-plat-36hz.vercel.app/admin/login`, {
         method: 'POST',
         credentials: "include",
         headers: {

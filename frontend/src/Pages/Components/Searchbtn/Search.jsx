@@ -33,7 +33,7 @@
 //   const openTeacherDec = async(id,fname,lname,sub)=>{
 //     setTname({fname,lname,sub});
 
-//     const data = await fetch('/api/teacher/teacherdocuments',{
+//     const data = await fetch('https://learning-plat-36hz.vercel.app/teacher/teacherdocuments',{
 //         method: 'POST',
 //         credentials: "include",
 //         headers: {
@@ -51,7 +51,7 @@
 //   useEffect(() => {
 //     const getData = async () => {
 //       try {
-//         const response = await fetch(`/api/course/student/${ID}/enrolled`, {
+//         const response = await fetch(`https://learning-plat-36hz.vercel.app/course/student/${ID}/enrolled`, {
 //           method: 'GET',
 //           headers: {
 //             'Content-Type': 'application/json',
@@ -78,7 +78,7 @@
 
 //   const SearchTeacher = async (sub) => {
 //     const subject = sub.toLowerCase();
-//     const Data = await fetch(`/api/course/${subject}`);
+//     const Data = await fetch(`https://learning-plat-36hz.vercel.app/course/${subject}`);
 //     const response = await Data.json();
 //     if (response.statusCode === 200) {
 //       setCourse(response.data);
@@ -89,7 +89,7 @@
 
 //   const handleEnroll = async (courseName, id) => {
 //     let check = await fetch(
-//       `/api/course/${courseName}/${id}/verify/student/${ID}`,
+//       `https://learning-plat-36hz.vercel.app/course/${courseName}/${id}/verify/student/${ID}`,
 //       {
 //         method: "POST",
 //         headers: {
@@ -104,7 +104,7 @@
 
 //     if(res.statusCode === 200){
 
-//     const data = await fetch(`/api/payment/course/${id}/${courseName}`, {
+//     const data = await fetch(`https://learning-plat-36hz.vercel.app/payment/course/${id}/${courseName}`, {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -115,7 +115,7 @@
 //     const DATA = await data.json();
 //     // console.log(DATA.data.id)
 
-//     const Key = await fetch("/api/payment/razorkey", {
+//     const Key = await fetch("https://learning-plat-36hz.vercel.app/payment/razorkey", {
 //       method: "GET",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -143,7 +143,7 @@
 //         };
 
 //         const verificationResponse = await fetch(
-//           `/api/payment/confirmation/course/${id}`,
+//           `https://learning-plat-36hz.vercel.app/payment/confirmation/course/${id}`,
 //           {
 //             method: "POST",
 //             headers: {
@@ -158,7 +158,7 @@
 //         if (res.statusCode === 200) {
 //           try {
 //             let response = await fetch(
-//               `/api/course/${courseName}/${id}/add/student/${ID}`,
+//               `https://learning-plat-36hz.vercel.app/course/${courseName}/${id}/add/student/${ID}`,
 //               {
 //                 method: "POST",
 //                 headers: {
@@ -331,7 +331,7 @@ function Search() {
     setTname({fname,lname,sub});
 
     try {
-      const response = await axios.post('/api/teacher/teacherdocuments', { teacherID: id });
+      const response = await axios.post('https://learning-plat-36hz.vercel.app/teacher/teacherdocuments', { teacherID: id });
       setTeacherDetails(response.data.data);
       setOpenTM(true);
     } catch (error) {
@@ -343,7 +343,7 @@ function Search() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(`/api/course/student/${ID}/enrolled`, {
+        const response = await fetch(`https://learning-plat-36hz.vercel.app/course/student/${ID}/enrolled`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -368,7 +368,7 @@ function Search() {
 
   const SearchTeacher = async (sub) => {
     const subject = sub.toLowerCase();
-    const Data = await fetch(`/api/course/${subject}`);
+    const Data = await fetch(`https://learning-plat-36hz.vercel.app/course/${subject}`);
     const response = await Data.json();
     if (response.statusCode === 200) {
       setCourse(response.data);
@@ -381,7 +381,7 @@ function Search() {
     try {
       // Step 1: Verify the student's enrollment status
       let check = await axios.post(
-        `/api/course/${courseName}/${id}/verify/student/${ID}`
+        `https://learning-plat-36hz.vercel.app/course/${courseName}/${id}/verify/student/${ID}`
       );
       const res = check.data;
 
@@ -391,7 +391,7 @@ function Search() {
       }
 
       // Step 2: Initiate a PayU transaction on your backend
-      const payuResponse = await axios.post('/api/payu/initiate-payment', {
+      const payuResponse = await axios.post('https://learning-plat-36hz.vercel.app/payu/initiate-payment', {
         courseId: id,
         courseName: courseName,
         fees: price[courseName],

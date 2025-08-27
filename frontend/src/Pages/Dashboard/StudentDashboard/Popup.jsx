@@ -23,7 +23,7 @@ function Popup({onClose, subject, allSubject}) {
 
   useEffect(()=>{
     const getData = async()=>{
-      const data = await fetch('/api/teacher/teacherdocuments',{
+      const data = await fetch('https://learning-plat-36hz.vercel.app/teacher/teacherdocuments',{
         method: 'POST',
         credentials: "include",
         headers: {

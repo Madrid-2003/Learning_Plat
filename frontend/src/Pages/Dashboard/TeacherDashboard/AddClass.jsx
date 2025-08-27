@@ -43,7 +43,7 @@
 //   useEffect(() => {
 //     const getCourses = async () => {
 //       try {
-//         const response = await fetch(`/api/course/Teacher/${ID}/enrolled`, {
+//         const response = await fetch(`https://learning-plat-36hz.vercel.app/course/Teacher/${ID}/enrolled`, {
 //           method: 'GET',
 //           headers: {
 //             'Content-Type': 'application/json',
@@ -98,7 +98,7 @@
 //       alert('All fields are required!');
 //     } else {
 //       try {
-//         const response = await fetch(`/api/course/${CourseId}/teacher/${ID}/add-class`, {
+//         const response = await fetch(`https://learning-plat-36hz.vercel.app/course/${CourseId}/teacher/${ID}/add-class`, {
 //           method: 'POST',
 //           headers: {
 //             'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ function AddClass({ onClose }) {
   useEffect(() => {
     const getCourses = async () => {
       try {
-        const response = await fetch(`/api/course/Teacher/${ID}/enrolled`, {
+        const response = await fetch(`https://learning-plat-36hz.vercel.app/course/Teacher/${ID}/enrolled`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -296,7 +296,7 @@ function AddClass({ onClose }) {
     };
 
     try {
-      const response = await fetch(`/api/course/${CourseId}/teacher/${ID}/add-class`, {
+      const response = await fetch(`https://learning-plat-36hz.vercel.app/course/${CourseId}/teacher/${ID}/add-class`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

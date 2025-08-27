@@ -47,7 +47,7 @@ export default function Login() {
 
     try {
       // Send data to backend (you need to implement this part)
-      const response = await fetch(`/api/${userType}/login`, {
+      const response = await fetch(`https://learning-plat-36hz.vercel.app/${userType}/login`, {
         method: 'POST',
         credentials: "include",
         headers: {

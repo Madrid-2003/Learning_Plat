@@ -97,7 +97,7 @@ function SearchTeacher() {
 
     const fetchCourses = async (query = '') => {
         try {
-            const endpoint = query ? `/api/course/${query.toLowerCase()}` : '/api/course/all';
+            const endpoint = query ? `https://learning-plat-36hz.vercel.app/course/${query.toLowerCase()}` : 'https://learning-plat-36hz.vercel.app/course/all';
             const response = await axios.get(endpoint, { withCredentials: true });
             
             if (response.data.statusCode === 200) {
@@ -131,7 +131,7 @@ function SearchTeacher() {
 
         try {
             const response = await axios.post(
-                `/api/payment/payu/course/${courseId}/${courseName}`,
+                `https://learning-plat-36hz.vercel.app/payment/payu/course/${courseId}/${courseName}`,
                 { fees, courseName },
                 { withCredentials: true }
             );

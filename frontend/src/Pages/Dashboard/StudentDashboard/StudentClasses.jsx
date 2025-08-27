@@ -10,7 +10,7 @@
 //     useEffect(() => {
 //         const getData = async () => {
 //           try {
-//             const response = await fetch(`/api/course/classes/student/${ID}`, {
+//             const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/student/${ID}`, {
 //               method: 'GET',
 //               headers: {
 //                 'Content-Type': 'application/json',
@@ -111,7 +111,7 @@
 //     useEffect(() => {
 //         const getData = async () => {
 //           try {
-//             const response = await fetch(`/api/course/classes/student/${ID}`, {
+//             const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/student/${ID}`, {
 //               method: 'GET',
 //               headers: {
 //                 'Content-Type': 'application/json',
@@ -212,7 +212,7 @@
 //   useEffect(() => {
 //       const getData = async () => {
 //         try {
-//           const response = await fetch(`/api/course/student/${ID}/enrolled`, {
+//           const response = await fetch(`https://learning-plat-36hz.vercel.app/course/student/${ID}/enrolled`, {
 //             method: 'GET',
 //             headers: {
 //               'Content-Type': 'application/json',
@@ -238,7 +238,7 @@
 
 //   const openpopup = async(sub)=>{ 
 //     setsubDetails(sub);
-//     await axios.get(`/api/course/${sub.coursename}`)
+//     await axios.get(`https://learning-plat-36hz.vercel.app/course/${sub.coursename}`)
 //       .then(res => {setPopup(true);
 //       setsubD(res.data.data)})
 //   }
@@ -316,7 +316,7 @@ function StudentClasses() {
     useEffect(() => {
         const getData = async () => {
           try {
-            const response = await fetch(`/api/course/classes/student/${ID}`, {
+            const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/student/${ID}`, {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',

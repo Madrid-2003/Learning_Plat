@@ -61,7 +61,7 @@ const Signup = () => {
 
     try {
       // Send data to backend (you need to implement this part)
-      const response = await fetch(`/api/${userType}/signup`, {
+      const response = await fetch(`https://learning-plat-36hz.vercel.app/${userType}/signup`, {
         method: "POST",
         mode: "cors",
         credentials: "include",

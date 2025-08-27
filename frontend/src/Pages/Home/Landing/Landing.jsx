@@ -39,7 +39,7 @@ function Landing() {
   const teachersList = async(sub)=>{
     setLoading(true);
 
-    const response = await fetch(`/api/course/${sub}`, {
+    const response = await fetch(`https://learning-plat-36hz.vercel.app/course/${sub}`, {
       method: 'GET',
       credentials: "include",
       headers: {

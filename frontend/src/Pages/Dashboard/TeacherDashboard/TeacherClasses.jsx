@@ -13,7 +13,7 @@
 //     useEffect(() => {
 //         const getData = async () => {
 //             try {
-//                 const response = await fetch(`/api/course/classes/teacher/${ID}`, {
+//                 const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/teacher/${ID}`, {
 //                     method: 'GET',
 //                     headers: {
 //                         'Content-Type': 'application/json',
@@ -130,7 +130,7 @@
 //     useEffect(() => {
 //         const getData = async () => {
 //             try {
-//                 const response = await fetch(`/api/course/classes/teacher/${ID}`, {
+//                 const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/teacher/${ID}`, {
 //                     method: 'GET',
 //                     headers: {
 //                         'Content-Type': 'application/json',
@@ -160,7 +160,7 @@
 //         }
 
 //         try {
-//             const response = await fetch(`/api/course/${courseId}/teacher/${ID}/delete-class`, {
+//             const response = await fetch(`https://learning-plat-36hz.vercel.app/course/${courseId}/teacher/${ID}/delete-class`, {
 //                 method: 'DELETE', // Using DELETE method for deletion
 //                 headers: {
 //                     'Content-Type': 'application/json',
@@ -294,7 +294,7 @@
 //     useEffect(() => {
 //         const getData = async () => {
 //             try {
-//                 const response = await fetch(`/api/course/classes/teacher/${ID}`, {
+//                 const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/teacher/${ID}`, {
 //                     method: 'GET',
 //                     headers: {
 //                         'Content-Type': 'application/json',
@@ -324,7 +324,7 @@
 //         }
 
 //         try {
-//             const response = await fetch(`/api/class/${courseId}/teacher/${ID}/delete-class`, { // Corrected API path to /api/class
+//             const response = await fetch(`https://learning-plat-36hz.vercel.app/class/${courseId}/teacher/${ID}/delete-class`, { // Corrected API path to https://learning-plat-36hz.vercel.app/class
 //                 method: 'DELETE',
 //                 headers: {
 //                     'Content-Type': 'application/json',
@@ -439,7 +439,7 @@ function TeacherClasses() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await fetch(`/api/course/classes/teacher/${ID}`, {
+                const response = await fetch(`https://learning-plat-36hz.vercel.app/course/classes/teacher/${ID}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -472,7 +472,7 @@ function TeacherClasses() {
 
         try {
             // Ensure the correct API path is used for the DELETE request
-            const response = await fetch(`/api/class/${courseId}/teacher/${ID}/delete-class`, { 
+            const response = await fetch(`https://learning-plat-36hz.vercel.app/class/${courseId}/teacher/${ID}/delete-class`, { 
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

@@ -23,7 +23,7 @@
     
 //     let SearchTeacher = async()=>{
 //         let Subject = data.toLowerCase();
-//         let Data = await fetch(`/api/course/${Subject}`)
+//         let Data = await fetch(`https://learning-plat-36hz.vercel.app/course/${Subject}`)
 //         let response = await Data.json();
 //         if(response.statusCode == 200){
 //         setCourse(response.data)
@@ -39,7 +39,7 @@
 //     const openTeacherDec = async(id,fname,lname,sub)=>{
 //         setTname({fname,lname,sub});
 
-//         const data = await fetch('/api/teacher/teacherdocuments',{
+//         const data = await fetch('https://learning-plat-36hz.vercel.app/teacher/teacherdocuments',{
 //             method: 'POST',
 //             credentials: "include",
 //             headers: {
@@ -151,10 +151,10 @@
 //             let response;
 //             if (searchSubject) {
 //                 // Fetch courses for a specific subject
-//                 response = await axios.get(`/api/course/${searchSubject}`);
+//                 response = await axios.get(`https://learning-plat-36hz.vercel.app/course/${searchSubject}`);
 //             } else {
 //                 // Fetch all approved courses
-//                 response = await axios.get(`/api/course/all`);
+//                 response = await axios.get(`https://learning-plat-36hz.vercel.app/course/all`);
 //             }
 
 //             if (response.data.statusCode === 200) {
@@ -187,7 +187,7 @@
 //     const openTeacherDec = async (id, fname, lname, sub) => {
 //         setTname({ fname, lname, sub });
 //         try {
-//             const res = await axios.post('/api/teacher/teacherdocuments', { teacherID: id });
+//             const res = await axios.post('https://learning-plat-36hz.vercel.app/teacher/teacherdocuments', { teacherID: id });
 //             setTeacherDetails(res.data.data);
 //             setOpenTM(true);
 //         } catch (err) {
@@ -300,9 +300,9 @@ function Search() {
         try {
             let response;
             if (searchSubject) {
-                response = await axios.get(`/api/course/${searchSubject}`, { withCredentials: true });
+                response = await axios.get(`https://learning-plat-36hz.vercel.app/course/${searchSubject}`, { withCredentials: true });
             } else {
-                response = await axios.get(`/api/course/all`, { withCredentials: true });
+                response = await axios.get(`https://learning-plat-36hz.vercel.app/course/all`, { withCredentials: true });
             }
 
             if (response.data.statusCode === 200) {
@@ -336,7 +336,7 @@ function Search() {
     const openTeacherDec = async (id, fname, lname, sub) => {
         setTname({ fname, lname, sub });
         try {
-            const res = await axios.post('/api/teacher/teacherdocuments', { teacherID: id }, { withCredentials: true });
+            const res = await axios.post('https://learning-plat-36hz.vercel.app/teacher/teacherdocuments', { teacherID: id }, { withCredentials: true });
             setTeacherDetails(res.data.data);
             setOpenTM(true);
         } catch (err) {
@@ -359,7 +359,7 @@ function Search() {
 
         try {
             const response = await axios.post(
-                `/api/payment/payu/course/${courseId}/${courseName}`,
+                `https://learning-plat-36hz.vercel.app/payment/payu/course/${courseId}/${courseName}`,
                 { fees, courseName },
                 { withCredentials: true }
             );

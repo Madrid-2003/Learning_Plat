@@ -15,7 +15,7 @@ const TeacherDocument = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(`/api/teacher/TeacherDocument/${Data}`, {
+        const response = await fetch(`https://learning-plat-36hz.vercel.app/teacher/TeacherDocument/${Data}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const TeacherDocument = () => {
     });
 
     try {
-      const response = await fetch(`/api/teacher/verification/${Data}`, {
+      const response = await fetch(`https://learning-plat-36hz.vercel.app/teacher/verification/${Data}`, {
         method: "POST",
         body: formDataObj,
       });

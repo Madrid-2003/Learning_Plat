@@ -15,7 +15,7 @@ function Contact() {
     }else if((!/\S+@\S+\.\S+/.test(email))){
       alert("Enter a valid email!")
     }else{
-      const data = await fetch('/api/admin/contact-us',{
+      const data = await fetch('https://learning-plat-36hz.vercel.app/admin/contact-us',{
         method: 'POST',
         credentials: "include",
         headers: {

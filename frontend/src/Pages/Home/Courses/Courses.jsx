@@ -10,7 +10,7 @@
 //   const teachersList = async(sub)=>{
 //     setLoading(true);
 
-//     const response = await fetch(`/api/course/${sub}`, {
+//     const response = await fetch(`https://learning-plat-36hz.vercel.app/course/${sub}`, {
 //       method: 'GET',
 //       credentials: "include",
 //       headers: {
@@ -112,10 +112,10 @@
 //             let response;
 //             if (sub) {
 //                 // Fetch teachers for a specific subject
-//                 response = await axios.get(`/api/course/${sub}`);
+//                 response = await axios.get(`https://learning-plat-36hz.vercel.app/course/${sub}`);
 //             } else {
 //                 // Fetch all approved courses
-//                 response = await axios.get(`/api/course/all`);
+//                 response = await axios.get(`https://learning-plat-36hz.vercel.app/course/all`);
 //             }
 //             setFacList(response.data.data);
 //             console.log(response.data.data);
@@ -217,9 +217,9 @@ function Courses() {
         try {
             let response;
             if (sub) {
-                response = await axios.get(`/api/course/${sub}`, { withCredentials: true }); // Ensure credentials
+                response = await axios.get(`https://learning-plat-36hz.vercel.app/course/${sub}`, { withCredentials: true }); // Ensure credentials
             } else {
-                response = await axios.get(`/api/course/all`, { withCredentials: true }); // Ensure credentials
+                response = await axios.get(`https://learning-plat-36hz.vercel.app/course/all`, { withCredentials: true }); // Ensure credentials
             }
             
             if (response.data.statusCode === 200) {
@@ -264,7 +264,7 @@ function Courses() {
 
         try {
             const response = await axios.post(
-                `/api/payment/payu/course/${courseId}/${courseName}`,
+                `https://learning-plat-36hz.vercel.app/payment/payu/course/${courseId}/${courseName}`,
                 { fees, courseName },
                 { withCredentials: true }
             );
