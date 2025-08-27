@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",                 // Dev frontend
-    "https://learning-plat-36hz.vercel.app"  // Prod frontend
+    "https://learning-plat-m5wb.vercel.app/"  // Prod frontend
   ],
   credentials: true
 }));
