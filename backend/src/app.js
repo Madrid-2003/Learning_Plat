@@ -5,17 +5,23 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-app.use(cors())
+// ✅ Correct CORS setup
+app.use(cors({
+  origin: [
+    "http://localhost:5173",                 // Dev frontend
+    "https://learning-plat-36hz.vercel.app"  // Prod frontend
+  ],
+  credentials: true
+}));
 
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
-app.use(express.static("public"))
-app.use(cookieParser())
+// Middleware
+app.use(express.json({ limit: "16kb" }));
+app.use(express.urlencoded({ extended: true, limit: "16kb" }));
+app.use(express.static("public"));
+app.use(cookieParser());
 
-
-
+// PayU config
 export const payuConfig = {
-  // key: process.env.PAYU_MERCHANT_KEY,
   key: process.env.PAYU_KEY,
   salt: process.env.PAYU_MERCHANT_SALT,
   env: process.env.PAYU_ENV === "test"
@@ -23,32 +29,23 @@ export const payuConfig = {
     : "https://secure.payu.in/_payment"
 };
 
-
-//student routes
+// ✅ Routes
 import studentRouter from "./routes/student.routes.js";
-app.use("/api/student", studentRouter)
+app.use("/api/student", studentRouter);
 
+import teacherRouter from "./routes/teacher.routes.js";
+app.use("/api/teacher", teacherRouter);
 
-//teacher routes
-import teacherRouter from "./routes/teacher.routes.js"
-app.use("/api/teacher", teacherRouter)
+import courseRouter from "./routes/course.routes.js";
+app.use("/api/course", courseRouter);
 
-//course routes
-import courseRouter from "./routes/course.routes.js"
-app.use("/api/course", courseRouter)
+import adminRouter from "./routes/admin.routes.js";
+app.use("/api/admin", adminRouter);
 
-import adminRouter from "./routes/admin.routes.js"
-app.use("/api/admin", adminRouter)
+import paymentRouter from "./routes/payment.routes.js";
+app.use("/api/payment", paymentRouter);
 
-import paymentRouter from "./routes/payment.routes.js"
-app.use("/api/payment", paymentRouter)
-//dd
-import classRouter from "./routes/class.routes.js"; // Import the new class router
+import classRouter from "./routes/class.routes.js";
+app.use("/api/class", classRouter);
 
-// ... (other app.use() statements)
-
-// Ensure this app.use() statement is present:
-app.use("/api/class", classRouter); // Use the new class router
-
-export {app}
-
+export { app };
