@@ -1,12 +1,15 @@
 {
-    "version":2,
-    "builds": [
-      { "src": "*.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "/"
-        }
-    ]
-  }
+  "functions": {
+    "src/index.js": {
+      "runtime": "vercel-node@16",
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/src/index.js"
+    }
+  ]
+}
