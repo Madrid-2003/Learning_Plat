@@ -31,21 +31,21 @@ export const payuConfig = {
 
 // ✅ Routes
 import studentRouter from "./routes/student.routes.js";
-app.use("/api/student", studentRouter);
+app.use("/student", studentRouter);
 
 import teacherRouter from "./routes/teacher.routes.js";
-app.use("/api/teacher", teacherRouter);
+app.use("/teacher", teacherRouter);
 
 import courseRouter from "./routes/course.routes.js";
-app.use("/api/course", courseRouter);
+app.use("/course", courseRouter);
 
 import adminRouter from "./routes/admin.routes.js";
-app.use("/api/admin", adminRouter);
+app.use("/admin", adminRouter);
 
 import paymentRouter from "./routes/payment.routes.js";
-app.use("/api/payment", paymentRouter);
+app.use("/payment", paymentRouter);
 
 import classRouter from "./routes/class.routes.js";
-app.use("/api/class", classRouter);
+app.use("/class", classRouter);
 
 export { app };
